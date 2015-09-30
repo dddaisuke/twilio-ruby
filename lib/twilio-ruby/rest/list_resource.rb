@@ -69,6 +69,9 @@ module Twilio
               []
             end
           }
+          eigenclass.send :define_method, :next_page?, &lambda {
+            response['next_page_uri'].present?
+          }
         end
         resource_list
       end
